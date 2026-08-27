@@ -1,0 +1,14 @@
+{
+    "challenge_module": "Comparator.Challenge",
+    "solution_module": "Comparator.Objectives",
+    "theorem_names": [
+        "ZeroFree.Challenge.thm_pointwise",
+        "ZeroFree.Challenge.thm_almostall"
+    ],
+    "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+    ],
+    "enable_nanoda": true
+}

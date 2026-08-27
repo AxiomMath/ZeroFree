@@ -1,0 +1,26 @@
+name = "zerofree"
+defaultTargets = ["ZeroFree"]
+lintDriver = "batteries/runLinter"
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "288f16d9a07189233a9bc5e1c143c38d1f3f4d37"
+
+[[lean_lib]]
+name = "ZeroFree"
+
+# The comparator pair, deliberately not a default target: `Comparator.Challenge`
+# states the results with `sorry` in place of each proof, and the comparator
+# builds both modules itself. There is no `Comparator.lean` umbrella because the
+# two modules declare the same theorem names, so importing both would not
+# elaborate.
+[[lean_lib]]
+name = "Comparator"
+roots = ["Comparator.Challenge", "Comparator.Objectives"]
